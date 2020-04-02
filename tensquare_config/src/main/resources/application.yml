@@ -1,0 +1,20 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: tensquare-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/gaozilong/config-test.git
+  rabbitmq:
+    host: 192.168.56.30
+
+    #暴露触发消息总线的地址
+    #给http://localhost:12000/actuator/bus-refresh发一个Post请求来给rabbitmq一个消息然后会自动编译配置更新过的模块
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
