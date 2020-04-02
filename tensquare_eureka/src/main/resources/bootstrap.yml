@@ -4,4 +4,4 @@ spring:
       name: eureka
       profile: dev
       label: master
-      uri: http://localhost:12000
+      uri: http://192.168.56.30:12000
